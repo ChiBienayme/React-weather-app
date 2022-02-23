@@ -10,27 +10,27 @@ export default function Search () {
   //URL
   // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=28a779be6bda3a19370d2b506ae1439e`;
 
-  // State
+  // City
   const [apiData, setApiData] = useState({});
-  const [state, setState] = useState('paris');
-  const [getState, setGetState] = useState('paris');
+  const [city, setCity] = useState('paris');
+  const [getCity, setGetCity] = useState('paris');
 
   // Side effect
   useEffect(() => {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=0b116f6119f2ece693e78008220c9527`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0b116f6119f2ece693e78008220c9527`)
       .then((res) => res.json())
       .then((data) => setApiData(data))
       .catch("Error")
-  },[`https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=0b116f6119f2ece693e78008220c9527`]);
+  },[`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0b116f6119f2ece693e78008220c9527`]);
 
   //functions handle input
 
   const handleInput = (e) => {
-    setGetState(e.target.value);
+    setGetCity(e.target.value);
   };
   
   const handleSubmit = () => {
-    setState(getState);
+    setCity(getCity);
   };
   
   // Change from F degree to C degree
@@ -54,11 +54,15 @@ export default function Search () {
               type="text"
               id="location-name"
               onChange={handleInput}
-              value={getState}
+              value={getCity}
             />
             
-            <button type="button" className="btn btn-primary mt-2" onClick={handleSubmit}>
+            <button type="button" onClick={handleSubmit}>
               Search
+            </button>
+
+            <button type="button" onClick={handleSubmit}>
+              Favorite
             </button>
         </div>
 
@@ -79,7 +83,7 @@ export default function Search () {
                 {fToC(apiData.main.temp)}&deg; C
               </p>
               {/* <p className="h2">
-                Today is {apiData.daily.temp.day}
+                Today is {apiData.daily.dt}
               </p> */}
 
               </div>
