@@ -7,6 +7,9 @@ import CityCard from "../components/CityCard";
 // Favorites Context
 import { favContext } from "../App";
 
+// CSS
+import "../App.css"
+
 export default function Favorites() {
   // Add a favorite city
   const favCity = useContext(favContext);
@@ -14,22 +17,23 @@ export default function Favorites() {
   // Remove a favorite city
   const removeCity = (name) => {
     const i = favCity.stockedCity.indexOf(name);
-    if (i > -1) {
+    if (i > - 1) {
       favCity.stockedCity.spilce(i, 1);
     }
   };
 
   return (
-    <div>
+    <Favorites>
       <>
         <h1>Favorites</h1>
+
         {favCity.stockedCity.map((city) => {
           return (
             <ul>
               <li>
                 <CityCard name={city[0].name} temp={city[0].main.temp} />
 
-                <button onClick={() => removeCity(city)}> Delete</button>
+                <button type="button" onClick={() => removeCity(city)}> Delete</button>
               </li>
             </ul>
           );
@@ -37,6 +41,8 @@ export default function Favorites() {
       </>
 
       <Footer />
-    </div>
+    </Favorites>
   );
 }
+
+

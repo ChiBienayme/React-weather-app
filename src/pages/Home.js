@@ -97,8 +97,9 @@ export default function Search () {
 
               {/* Temperature of city */}
               <p className="h2">
-                {fToC(apiData.main.temp)}&deg; C
+                {Math.floor(fToC(apiData.main.temp))}&deg; C
               </p>
+
 
               {/* Date */}
               {/* <p className="h2">

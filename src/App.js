@@ -17,11 +17,11 @@ export const favContext = createContext({
 
 export default function App() {
 
-  const [stockedCity, setstockedCity] = useState([]);
+  const [stockedCity, setStockedCity] = useState([]);
 
   const value = {
     stockedCity: stockedCity,
-    setstockedCity: setstockedCity,
+    setStockedCity: setStockedCity,
   }
 
     return (
