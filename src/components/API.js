@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import Footer from "./Footer"
+// import AddButton from "./AddButton"
+// import DeleteButton from "./DeleteButton"
 
 //CSS
 import '../App.css';
 
 
 export default function Search () {
-  //URL
-  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=28a779be6bda3a19370d2b506ae1439e`;
-
+ 
   // City
   const [apiData, setApiData] = useState({});
   const [city, setCity] = useState('paris');
   const [getCity, setGetCity] = useState('paris');
+  // const [fav, setFav] = React.useState(false);
+  
 
   // Side effect
   useEffect(() => {
@@ -23,12 +25,12 @@ export default function Search () {
       .catch("Error")
   },[`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0b116f6119f2ece693e78008220c9527`]);
 
-  //functions handle input
-
+  //function handle input/Enter location
   const handleInput = (e) => {
     setGetCity(e.target.value);
   };
-  
+
+  //function handle Submit/SEARCH
   const handleSubmit = () => {
     setCity(getCity);
   };
@@ -37,6 +39,25 @@ export default function Search () {
   const fToC = (f) => {
     return (f - 273.15).toFixed(2);
   };
+
+  // Add more 3 favorite cities
+  // const handleFav = () => {
+  //   setFav(!fav)
+  //   if(fav === true){
+  //     //save it to firestore
+  //     AddButton("favorites",apiData.name)
+  //     //save name to localstorage? but this will fail if they come back
+    
+  //   }else{
+  //     console.log('delete me?')
+  //     console.log(apiData.name)
+  //     DeleteButton("delete",apiData.name)
+
+  //     //delete it where 
+  //   }
+  // }
+
+  
 
   return (
 
@@ -47,7 +68,7 @@ export default function Search () {
         <div className="container">
           <div>
             <label for="location-name">
-              Enter Location :
+              Enter location :
             </label>
             
             <input
@@ -61,9 +82,9 @@ export default function Search () {
               Search
             </button>
 
-            <button type="button" onClick={handleSubmit}>
+            {/* <button type="button" onClick={handleFav}>
               Favorite
-            </button>
+            </button> */}
         </div>
 
         <div style={{ width: '60vw' }}>

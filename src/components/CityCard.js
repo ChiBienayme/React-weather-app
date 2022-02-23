@@ -1,14 +1,9 @@
-import React from 'react';
-import '../App.css';
+export default function CityCard() {
 
-export default function CityCard () {
-  
-    return (
-        <div>
-          <h2>City Card</h2>
-        </div>
-  
-    )
-  
+  return (
+      <div>
+          <p>{this.props.name}</p>
+          <p>{this.props.temp}</p>
+      </div>
+  ); 
 }
-

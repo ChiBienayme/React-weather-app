@@ -26,6 +26,8 @@ export default function App() {
             <Route exact path="/favoris" component={Favorites} /> 
           </Switch>
 
+   
+
         </BrowserRouter>
     )
 }

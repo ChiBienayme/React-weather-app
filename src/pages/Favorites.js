@@ -6,8 +6,13 @@ export default function Favorites () {
   
     return (
       <div>
-         <CityCard/>
-         <Footer />
+        <div>
+          <CityCard/>
+          <CityCard/>
+          <CityCard/>
+        </div>
+         
+        <Footer />
       </div>
     )
   
