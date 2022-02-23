@@ -1,19 +1,42 @@
-import React from 'react';
-import Footer from '../components/Footer';
-import CityCard from '../components/CityCard';
+import React, { useContext } from "react";
 
-export default function Favorites () {
-  
-    return (
-      <div>
-        <div>
-          <CityCard/>
-          <CityCard/>
-          <CityCard/>
-        </div>
-         
-        <Footer />
-      </div>
-    )
-  
+// components
+import Footer from "../components/Footer";
+import CityCard from "../components/CityCard";
+
+// Favorites Context
+import { favContext } from "../App";
+
+export default function Favorites() {
+  // Add a favorite city
+  const favCity = useContext(favContext);
+
+  // Remove a favorite city
+  const removeCity = (name) => {
+    const i = favCity.stockedCity.indexOf(name);
+    if (i > -1) {
+      favCity.stockedCity.spilce(i, 1);
+    }
+  };
+
+  return (
+    <div>
+      <>
+        <h1>Favorites</h1>
+        {favCity.stockedCity.map((city) => {
+          return (
+            <ul>
+              <li>
+                <CityCard name={city[0].name} temp={city[0].main.temp} />
+
+                <button onClick={() => removeCity(city)}> Delete</button>
+              </li>
+            </ul>
+          );
+        })}
+      </>
+
+      <Footer />
+    </div>
+  );
 }
