@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//pages
+import Accueil from "./pages/Accueil";
+import Favoris from "./pages/Favoris";
+
+
+// CSS
+import "./App.css"
+
+
+//API Key: 28a779be6bda3a19370d2b506ae1439e
+export default function App() {
+
+    return (
+      <BrowserRouter>
+          <nav className='nav '>
+              <Link className="text-link" to="/" > Accueil  </Link>
+              <Link className="text-link" to="/favoris"> Favoris  </Link>  
+          </nav>
+
+          <Switch>
+            <Route exact path="/" component={Accueil} />
+            <Route exact path="/favoris" component={Favoris} /> 
+          </Switch>
+
+        </BrowserRouter>
+    )
 }
 
-export default App;
+
