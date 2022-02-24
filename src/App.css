@@ -21,7 +21,7 @@
   color: inherit;
   text-decoration: inherit;
   color: white;
-  background: #bd1793;
+  background: #1f10a7;
   border-radius: 4px;
   margin: 2%;
 }
@@ -33,7 +33,9 @@
   margin: 0 auto;
 }
 body {
-  background: #0e101c;
+  background-image: url(./asset/img/background.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -68,7 +70,6 @@ input {
   font-weight: 200;
 }
 
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -82,7 +83,7 @@ input {
 
 button[type="button"] {
   position: relative;
-  background: #bd1793;
+  background: #1f10a7;
   color: white;
   text-transform: uppercase;
   border: none;
@@ -102,7 +103,7 @@ button[type="button"] {
 
 input[type="submit"]:hover,
 button[type="button"]:hover {
-  background: #d6d305;
+  background: #b1049a;
   color: white;
 }
 
@@ -116,14 +117,25 @@ input[type="submit"]:active {
   justify-content: center;
 }
 
-.card {
+
+/* CityCard */
+.city-card {
   border: 1px solid white;
-  width: 800px;
+  width: 50vw;
   border-radius: 20px;
-  box-shadow: 5px 5px 5px rgb(175, 171, 171);
+  box-shadow: 10px 10px 5px rgb(175, 171, 171);
+  background-color: rgb(0, 0, 0);
+  opacity: 0.7;
+  filter: alpha(opacity=50);
+  color: white;
+}
+.city-card:hover {
+  border: 1px solid rgb(66, 66, 66);
+  box-shadow: 5px 10px 5px rgb(255, 255, 255);
+  background-color: rgb(13, 3, 68);
 }
 
 img.weather-icon {
-  width: 100px;
+  width: 150px;
   height: auto;
 }

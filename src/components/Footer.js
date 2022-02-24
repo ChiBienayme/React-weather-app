@@ -6,11 +6,12 @@ export default function Footer () {
     return (
       <div>
           <code>
-            Created by
-            <a href="https://github.com/ChiBienayme/React-weather-app" target="none">
+            Created by Ha Chi HOANG using React -  February 23, 2022
+            {/* <a href="https://github.com/ChiBienayme/React-weather-app" target="none">
               Ha Chi HOANG
-            </a>
-             using React -  February 23, 2022
+            </a> */}
+            
+            
           </code>
       </div>
     )

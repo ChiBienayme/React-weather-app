@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 
 // Library
 import moment from "moment";
+// import Popup from 'reactjs-popup';
 
 // components
 import Footer from "../components/Footer";
@@ -17,6 +18,7 @@ export default function Search() {
   const [apiData, setApiData] = useState({});
   const [city, setCity] = useState("Paris");
   const [weather, setWeather] = useState([]);
+
   const favCity = useContext(favContext);
 
   //function handle input/Enter location
@@ -39,10 +41,7 @@ export default function Search() {
   const getFavorite = () => {
     if (favCity.stockedCity.length < 3) {
       favCity.stockedCity.push(apiData);
-
-      console.log("favorite", favCity.stockedCity[0].name);
-
-      alert(`${favCity.stockedCity[0].name} is your favorite city`)
+      // console.log("favorite", favCity.stockedCity[0].name);
 
     } else {
       console.log("Error");
@@ -77,9 +76,13 @@ export default function Search() {
             Search
           </button>
 
-          <button type="button" onClick={getFavorite} >
-            Favorite
+          <button type="button" onClick={getFavorite}>
+            Like
           </button>
+          {/* <Popup trigger={<button type="button" onClick={getFavorite} > Favorite </button>} 
+          position="right center">
+            <div>Your favorite city is added !</div>
+          </Popup> */}
 
         </div>
 
@@ -94,9 +97,7 @@ export default function Search() {
            description = {apiData.weather[0].description}
            humidity = {apiData.main.humidity}
            day = {moment().format('LL')}
-
-          />
-            
+          />   
         ) : (
           <h4> Loading... </h4>
         ) }
