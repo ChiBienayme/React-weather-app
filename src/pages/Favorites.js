@@ -45,7 +45,7 @@ export default function Favorites() {
                     temp={Math.floor(fToC(city.main.temp))}
                     tempMax={Math.floor(fToC(city.main.temp_max))}
                     tempMin={Math.floor(fToC(city.main.temp_min))}
-                    description={city.weather.description}
+                    description={city.weather[0].description}
                     humidity={city.main.humidity}
                     day={moment().format("LL")}
                   />

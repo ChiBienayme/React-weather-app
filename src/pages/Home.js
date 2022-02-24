@@ -79,8 +79,10 @@ export default function Search() {
           <button type="button" onClick={getFavorite}>
             Like
           </button>
-          {/* <Popup trigger={<button type="button" onClick={getFavorite} > Favorite </button>} 
-          position="right center">
+
+
+          {/* <Popup trigger={<button type="button" onClick= {getFavorite} > Favorite </button>} 
+          position="left">
             <div>Your favorite city is added !</div>
           </Popup> */}
 
