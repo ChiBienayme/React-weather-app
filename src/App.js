@@ -28,7 +28,7 @@ export default function App() {
      
         <favContext.Provider value={value}>
           <BrowserRouter>
-            <nav className='nav '>
+            <nav className='nav'>
                 <Link className="text-link" to="/" > Home  </Link>
                 <Link className="text-link" to="/favorites"> Favorites  </Link>  
             </nav>

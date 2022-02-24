@@ -29,6 +29,8 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 body {
   background: #0e101c;
@@ -87,11 +89,6 @@ input[type="submit"],
   transition: 0.3s all;
 }
 
-.App {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -100,6 +97,7 @@ input[type="submit"],
   align-items: center;
   margin: 5px;
   letter-spacing: 2px;
+  max-width: 20%;
 }
 
 button[type="button"] {
@@ -135,11 +133,18 @@ input[type="submit"]:active {
 
 .temperature {
   display: flex;
+  justify-content: center;
 }
 
 .card {
   border: 1px solid white;
   width: 500px;
   border-radius: 20px;
-  box-shadow: 5px 10px 5px rgb(175, 171, 171);
+  box-shadow: 5px 5px 5px rgb(175, 171, 171);
+  max-width: 100%;
+}
+
+img.weather-icon {
+  width: 100px;
+  height: auto;
 }

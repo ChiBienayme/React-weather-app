@@ -23,6 +23,11 @@ export default function Favorites() {
     }
   };
 
+  // const handleRemoveItem = (e) => {
+//    const name = e.target.getAttribute("name")
+//    updateList(list.filter(item => item.name !== name));
+//  };
+
   return (
     <div>
       <>
@@ -36,7 +41,7 @@ export default function Favorites() {
               <li>
                 <CityCard key={city[0].description} 
                           name={city.name}
-                          image = {`http://openweathermap.org/img/w/${city[0].weather[0].icon}.png`} 
+                          
                           temp={city.main.temp}
                         />
 
