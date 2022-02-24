@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
+import moment from "moment";
 
 import { favContext } from "../App";
 
 import Footer from "../components/Footer";
-import CityCard from "../components/CityCard";
 
 
 //CSS
@@ -53,10 +53,11 @@ export default function Search() {
 
   return (
     <div className="App">
-      <h2> React Weather App </h2>
+     <h1> React Weather App </h1>
 
       <div className="container">
         <div>
+          
           <label  className="location-name"> Enter location :</label>
           
           <input 
@@ -73,33 +74,52 @@ export default function Search() {
           <button type="button" onClick={getFavorite}>
             Favorite
           </button>
-        </div>
+      </div>
 
-        <div style={{ width: "60vw" }}>
+        <div className="card">
           {apiData.main ? (
             <div>
+              
+
+              {/* Name of city */}
+              <h2>
+                <strong> {apiData.name.toUpperCase()}</strong>
+              </h2>
+
+              {/* Icon */}
               <img
                 src={`http://openweathermap.org/img/w/${apiData.weather[0].icon}.png`}
                 alt="weather status icon"
                 className="weather-icon"
               />
 
-              {/* Name of city */}
-              <p className="h5">
-                <strong> {apiData.name}</strong>
+              {/* Temperature of city */}
+              <div className="temperature">
+                <p> Temp: {Math.floor(fToC(apiData.main.temp))}&deg; C </p>
+                <p> Max: {Math.floor(fToC(apiData.main.temp_max))}&deg; C </p>
+                <p> Min: {Math.floor(fToC(apiData.main.temp_min))}&deg; C </p>
+
+                
+              </div>
+              
+                {/* Description */}
+                <p>
+                  {apiData.weather[0].description}
+                </p>
+              
+
+              {/* Humidity */}
+              <p>
+                Humidity: {apiData.main.humidity}
               </p>
 
-              {/* Temperature of city */}
-              <p className="h2">{Math.floor(fToC(apiData.main.temp))}&deg; C</p>
-
-              {/* Date */}
-              {/* <p className="h2">
-                Today is {apiData.daily.dt}
-              </p> */}
+              {/* DAY */}
+              <p className="day">{moment().format('LL')}</p>
+             
             </div>
+
           ) : (
             <h4> Loading... </h4>
-            // <CityCard name={apiData.name} temp={apiData.main.temp} onClick={getFavorite}/>
           ) }
         </div>
       </div>

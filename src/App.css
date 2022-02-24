@@ -1,8 +1,8 @@
 * {
-  margin: 1px;
-  padding: 3px;
+  margin: 5px;
+  padding: 10px;
 }
- .nav {
+.nav {
   font-size: 24px;
   font-weight: 200;
   color: white;
@@ -14,7 +14,16 @@
 .text-link {
   color: inherit;
   text-decoration: inherit;
-  color:white;
+  color: white;
+  margin: 2%;
+}
+.text-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+  color: white;
+  background: #ec5990;
+  border-radius: 4px;
+  margin: 2%;
 }
 
 .App {
@@ -28,23 +37,6 @@ body {
     sans-serif;
   color: white;
   padding: 0 20px 50px;
-}
-
-.h1 {
-  margin-top: 80px;
-  color: white;
-  font-size: 25px;
-  padding-bottom: 0px;
-}
-
-.form {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.p {
-  color: #bf1650;
-  text-align: center;
 }
 
 select,
@@ -62,7 +54,7 @@ input {
   font-size: 14px;
 }
 
-.label{
+.label {
   line-height: 2;
   text-align: left;
   display: block;
@@ -74,9 +66,8 @@ input {
   font-weight: 200;
 }
 
-
 input[type="submit"],
-.button{
+.button {
   position: relative;
   background: #ec5990;
   color: white;
@@ -104,19 +95,23 @@ input[type="submit"],
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  grid-gap: 10px;
+  display: row;
+  align-items: center;
+  margin: 5px;
+  letter-spacing: 2px;
 }
 
 button[type="button"] {
   position: relative;
-  background: #ec5990;
+  background: #bd1793;
   color: white;
   text-transform: uppercase;
   border: none;
-  font-weight: 600;
+  font-weight: 200;
   margin-top: 20px;
   padding: 20px;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing: 2px;
   display: block;
   appearance: none;
@@ -129,7 +124,7 @@ button[type="button"] {
 
 input[type="submit"]:hover,
 button[type="button"]:hover {
-  background: #bf1650;
+  background: #d6d305;
   color: white;
 }
 
@@ -138,4 +133,13 @@ input[type="submit"]:active {
   top: 2px;
 }
 
+.temperature {
+  display: flex;
+}
 
+.card {
+  border: 1px solid white;
+  width: 500px;
+  border-radius: 20px;
+  box-shadow: 5px 10px 5px rgb(175, 171, 171);
+}

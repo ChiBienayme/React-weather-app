@@ -3,7 +3,6 @@ import React, { useContext } from "react";
 // components
 import Footer from "../components/Footer";
 import CityCard from "../components/CityCard";
-import Home from "./Home"
 
 // Favorites Context
 import { favContext } from "../App";
@@ -14,6 +13,7 @@ import "../App.css"
 export default function Favorites() {
   // Add a favorite city
   const favCity = useContext(favContext);
+  console.log("City", favCity.stockedCity[0])
 
   // Remove a favorite city
   const removeCity = (name) => {
@@ -24,26 +24,33 @@ export default function Favorites() {
   };
 
   return (
-    <Favorites.Provider value={favCity}>
+    <div>
       <>
-        <h1>Favorites</h1>
-        {this.props.children}
-        {favCity.stockedCity.map((city) => {
+        <h1>Favorite Cities</h1>
+        <button type="button" onClick={removeCity} style={{width: "20vw"}}> Delete </button>
+       
+       
+         {favCity.stockedCity.map((city) => {
           return (
             <ul>
               <li>
-                <CityCard name={city[0].name} 
-                          temp={city[0].main.temp} />
+                <CityCard key={city[0].description} 
+                          name={city.name}
+                          image = {`http://openweathermap.org/img/w/${city[0].weather[0].icon}.png`} 
+                          temp={city.main.temp}
+                        />
 
-                <button type="button" onClick={() => removeCity(city)}> Delete</button>
+                <button type="button" onClick={() => removeCity(city)}> Delete </button>
               </li>
-            </ul>
-          );
+                
+            </ul>  
+              
+          )
         })}
       </>
 
       <Footer />
-    </Favorites.Provider>
+    </div>
   );
 }
 
