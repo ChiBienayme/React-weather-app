@@ -28,7 +28,7 @@ export default function Search() {
 
   //function handle input/Enter location
   const handleInput = (e) => {
-    setWeather(e.target.value);
+    setWeather(e.target.value); 
   };
 
   //function handle Submit/SEARCH
