@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import moment from "moment";
 
 // components
 import Footer from "../components/Footer";
@@ -23,28 +24,32 @@ export default function Favorites() {
     }
   };
 
-  // const handleRemoveItem = (e) => {
-//    const name = e.target.getAttribute("name")
-//    updateList(list.filter(item => item.name !== name));
-//  };
+  // Change from F degree to C degree
+  const fToC = (f) => {
+    return (f - 273.15).toFixed(2);
+  };
 
   return (
     <div>
       <>
         <h1>Favorite Cities</h1>
-        <button type="button" onClick={removeCity} style={{width: "20vw"}}> Delete </button>
-       
        
          {favCity.stockedCity.map((city) => {
           return (
             <ul>
               <li>
-                <CityCard key={city[0].description} 
-                          name={city.name}
-                          
-                          temp={city.main.temp}
-                        />
+                <CityCard className="card-favorite"
+                name = {city.name.toUpperCase()}
+                image = {`http://openweathermap.org/img/w/${city.weather[0].icon}.png`}
+                temp = {Math.floor(fToC(city.main.temp))}
+                tempMax = {Math.floor(fToC(city.main.temp_max))}
+                tempMin = {Math.floor(fToC(city.main.temp_min))}
+                description = {city.weather[0].description}
+                humidity = {city.main.humidity}
+                day = {moment().format('LL')}
 
+                />
+              
                 <button type="button" onClick={() => removeCity(city)}> Delete </button>
               </li>
                 

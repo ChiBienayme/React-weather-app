@@ -21,7 +21,7 @@
   color: inherit;
   text-decoration: inherit;
   color: white;
-  background: #ec5990;
+  background: #bd1793;
   border-radius: 4px;
   margin: 2%;
 }
@@ -68,26 +68,6 @@ input {
   font-weight: 200;
 }
 
-input[type="submit"],
-.button {
-  position: relative;
-  background: #ec5990;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  font-weight: 600;
-  margin-top: 20px;
-  padding: 20px;
-  font-size: 16px;
-  letter-spacing: 2px;
-  display: block;
-  appearance: none;
-  border-radius: 4px;
-  width: 100%;
-  font-weight: 400;
-  letter-spacing: 0.5rem;
-  transition: 0.3s all;
-}
 
 .container {
   display: grid;
@@ -138,10 +118,9 @@ input[type="submit"]:active {
 
 .card {
   border: 1px solid white;
-  width: 500px;
+  width: 800px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px rgb(175, 171, 171);
-  max-width: 100%;
 }
 
 img.weather-icon {

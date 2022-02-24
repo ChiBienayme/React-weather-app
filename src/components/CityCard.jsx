@@ -4,8 +4,8 @@ export default function CityCard(props) {
 
   return (
       <div className='card'>
-          <p>{props.name}</p>
-          <img src={props.image} alt="Weather icon" /> 
+          <h1>{props.name}</h1>
+          <img className="weather-icon" src={props.image} alt="Weather icon" /> 
           <div className="temperature">
             <p>Temp: {Math.round(props.temp)}°C</p>
             <p>Max:{Math.round(props.tempMax)}°C</p>
@@ -15,7 +15,6 @@ export default function CityCard(props) {
           <p>{props.humidity}%</p>
           <p>{props.day}</p>
           
-          {/* <button title={props.title} type="submit" className="favoriteButton" onClick={props.onClick}><span id='buttonText'>{props.children}</span></button> */}
       </div>
   ); 
 }

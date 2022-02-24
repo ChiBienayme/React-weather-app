@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
+
+// Library
 import moment from "moment";
 
-import { favContext } from "../App";
-
+// components
 import Footer from "../components/Footer";
-
+import CityCard from "../components/CityCard";
+import { favContext } from "../App";
 
 //CSS
 import "../App.css";
-import CityCard from "../components/CityCard";
+
 
 export default function Search() {
   // City
@@ -16,8 +18,6 @@ export default function Search() {
   const [city, setCity] = useState("Paris");
   const [weather, setWeather] = useState([]);
   const favCity = useContext(favContext);
-
-  
 
   //function handle input/Enter location
   const handleInput = (e) => {
@@ -28,6 +28,7 @@ export default function Search() {
   const handleSubmit = () => {
     setCity(weather);
   };
+
 
   // Change from F degree to C degree
   const fToC = (f) => {
@@ -68,15 +69,10 @@ export default function Search() {
         <div>
           
           <label  className="location-name"> Enter location :</label>
-          
-          <input 
-            type="text"
-            placeholder="Paris"
-            className="location-name"
-            onChange={handleInput}
-            value={weather}
-          />
 
+          <input type="text" placeholder="Paris" onChange={handleInput}
+            value={weather} />
+          
           <button type="button" onClick={handleSubmit}>
             Search
           </button>
@@ -84,8 +80,8 @@ export default function Search() {
           <button type="button" onClick={getFavorite} >
             Favorite
           </button>
-          
-      </div>
+
+        </div>
 
         
         {apiData.main ? (
