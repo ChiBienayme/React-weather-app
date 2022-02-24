@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 // components
 import Footer from "../components/Footer";
 import CityCard from "../components/CityCard";
+import Home from "./Home"
 
 // Favorites Context
 import { favContext } from "../App";
@@ -23,15 +24,16 @@ export default function Favorites() {
   };
 
   return (
-    <Favorites>
+    <Favorites.Provider value={favCity}>
       <>
         <h1>Favorites</h1>
-
+        {this.props.children}
         {favCity.stockedCity.map((city) => {
           return (
             <ul>
               <li>
-                <CityCard name={city[0].name} temp={city[0].main.temp} />
+                <CityCard name={city[0].name} 
+                          temp={city[0].main.temp} />
 
                 <button type="button" onClick={() => removeCity(city)}> Delete</button>
               </li>
@@ -41,7 +43,7 @@ export default function Favorites() {
       </>
 
       <Footer />
-    </Favorites>
+    </Favorites.Provider>
   );
 }
 

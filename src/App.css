@@ -47,7 +47,6 @@ body {
   text-align: center;
 }
 
-textarea,
 select,
 input {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -63,17 +62,18 @@ input {
   font-size: 14px;
 }
 
-.label,
-section > label {
+.label{
   line-height: 2;
   text-align: left;
   display: block;
   margin-bottom: 13px;
   margin-top: 20px;
+  padding: 10px;
   color: white;
   font-size: 14px;
   font-weight: 200;
 }
+
 
 input[type="submit"],
 .button{
@@ -96,11 +96,6 @@ input[type="submit"],
   transition: 0.3s all;
 }
 
-.buttonBlack {
-  background: black;
-  border: 1px solid white;
-}
-
 .App {
   max-width: 600px;
   margin: 0 auto;
@@ -110,18 +105,6 @@ input[type="submit"],
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
-}
-
-.counter {
-  font-weight: 400;
-  background: white;
-  color: black;
-  padding: 10px 15px;
-  border-radius: 4px;
-  position: fixed;
-  top: 20px;
-  right: 30px;
-  z-index: 9999999;
 }
 
 button[type="button"] {
@@ -155,11 +138,4 @@ input[type="submit"]:active {
   top: 2px;
 }
 
-.preact {
-  opacity: 0;
-  color: white;
-}
 
-.preact:hover {
-  opacity: 1;
-}
